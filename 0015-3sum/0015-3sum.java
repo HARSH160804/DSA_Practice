@@ -39,7 +39,7 @@ class Solution {
                         left++;
                     }
 
-                    // ❌ You had right++
+                    
                     // right pointer should move inward
                     while (left < right &&
                            nums[right] == nums[right + 1]) {
