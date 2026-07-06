@@ -1,66 +1,79 @@
-class Solution {
-    public List<List<Integer>> threeSum(int[] nums) {
-
+class Solution 
+{
+    public List<List<Integer>> threeSum(int[] nums) 
+    {
         List<List<Integer>> ans = new ArrayList<>();
-
+        
         int length = nums.length;
-
         Arrays.sort(nums);
 
-
-
-        for(int k=0;k<length-2;k++){
-             if (k > 0 && nums[k] == nums[k - 1]) {
+        for(int i = 0;i<length-2;i++)
+        {
+            if(i>0 && nums[i]==nums[i-1])
+            {
                 continue;
             }
-            int target = -1*nums[k];
-            int left = k+1;
-            int right =length-1;
-            
 
-        
+            int low = i+1;
+            int high = length-1;
 
+            //two pointer start 
+            while(low<high)
+            {
+                int sum = nums[low]+nums[high];
+                int target = -1*nums[i];
+                if(sum==target)
+                {
+                    ArrayList<Integer> temp = new ArrayList<>();
+                    temp.add(nums[i]);
+                    temp.add(nums[low]);
+                    temp.add(nums[high]);
+                    ans.add(temp);
+                    low++;
+                    high--;
 
+                
 
-        //================two sum==========
-
-        while(left<right){
-            int sum = nums[left]+nums[right];
-        
-
-        if (sum==target){
-            ans.add(Arrays.asList(nums[k], nums[left], nums[right]));
-            left++;
-            right--;
-        
-        
-                    while (left < right &&
-                           nums[left] == nums[left - 1]) {
-                        left++;
+                    while(low<high && nums[low] == nums[low-1])
+                    {
+                        low++;
                     }
 
-                    
-                    // right pointer should move inward
-                    while (left < right &&
-                           nums[right] == nums[right + 1]) {
-                        right--;
+                    while(low<high && nums[high] == nums[high+1])
+                    {
+                        high--;
                     }
-
-        }
-
-
-        else if(sum>target){
-            right--;
-        }
-        else if (sum<target){
-            left++;
-        }
+                }
 
 
+                else if(sum>target)
+                {
+                    high--;
+                }
+
+                else
+                {
+                    low++;
+                }
+            }
         
-
-        
-         }}
+        }
         return ans;
+
+
+
+
+
+
+        
     }
 }
+
+
+
+
+
+
+
+
+
