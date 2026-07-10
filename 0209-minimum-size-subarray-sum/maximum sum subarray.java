@@ -6,10 +6,14 @@ class Solution {
         int res = Integer.MIN_VALUE;
         int sum =0;
         int length=arr.length;
+
+        //create window
         for(int i=0;i<k;i++)
         {
-        sum = sum+arr[i];
+            sum = sum+arr[i];
         }
+
+        //slide the window :)
         
         while(high<length)
         {
