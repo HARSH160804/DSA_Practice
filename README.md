@@ -35,6 +35,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0197-rising-temperature](https://github.com/HARSH160804/DSA_Practice/tree/master/0197-rising-temperature) |
 | [0577-employee-bonus](https://github.com/HARSH160804/DSA_Practice/tree/master/0577-employee-bonus) |
 | [0584-find-customer-referee](https://github.com/HARSH160804/DSA_Practice/tree/master/0584-find-customer-referee) |
+| [0595-big-countries](https://github.com/HARSH160804/DSA_Practice/tree/master/0595-big-countries) |
 | [1068-product-sales-analysis-i](https://github.com/HARSH160804/DSA_Practice/tree/master/1068-product-sales-analysis-i) |
 | [1280-students-and-examinations](https://github.com/HARSH160804/DSA_Practice/tree/master/1280-students-and-examinations) |
 | [1378-replace-employee-id-with-the-unique-identifier](https://github.com/HARSH160804/DSA_Practice/tree/master/1378-replace-employee-id-with-the-unique-identifier) |
