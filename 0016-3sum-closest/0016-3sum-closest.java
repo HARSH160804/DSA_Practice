@@ -1,62 +1,66 @@
 class Solution {
     public int threeSumClosest(int[] nums, int target) {
-        
-        int length = nums.length;
-        
+
+        int min_diff = Integer.MAX_VALUE;
+        int resultsum = 0;
         Arrays.sort(nums);
-        int min_difference = Integer.MAX_VALUE;
-        int result_sum = 0;
 
-        for(int i=0;i<length-2;i++)
+
+        for(int i=0;i<nums.length-2;i++)
         {
-            int low = i+1;
-            int high=length-1;
-            
 
-            //two pointer
+            int low= i+1;
+            int high=nums.length-1;
 
+            //two pointers
             while(low<high)
             {
-                int sum = nums[i]+nums[low]+nums[high];
-                int difference = Math.abs(target-sum);
+                int sum=nums[low]+nums[high]+nums[i];
+                int difference = Math.abs(sum-target);
 
                 if(sum==target)
                 {
-                    min_difference=difference;
-                    result_sum=sum;
+                    
+                    min_diff = difference;
                     low++;
                     high--;
+                    resultsum = sum;
 
                 }
-
-                if(sum>target)
+                else if(sum>target)
                 {
-                    if(difference< min_difference)
+                    
+                    if(difference < min_diff)
                     {
-                     min_difference=difference;
-                     result_sum=sum;
-
+                        min_diff = difference;
+                        high--;
+                        resultsum = sum;
                     }
-
+                    else {
                     high--;
+                    }
                 }
-                
-                if(sum<target)
+                else if(sum<target)
                 {
-                    if(difference< min_difference)
+                    
+                    if(difference < min_diff)
                     {
-                     min_difference=difference;
-                     result_sum=sum;
-
+                        min_diff = difference;
+                        low++;
+                        resultsum = sum;
+                    }
+                    else
+                    {
+                        low++;
                     }
 
-                    low++;
                 }
-                
-               
+
             }
-
         }
-        return  result_sum;
+       return  resultsum;
+       
+       
+        
     }
 }
